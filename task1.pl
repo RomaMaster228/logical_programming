@@ -52,3 +52,6 @@ parity_partition([A|B], X, [A|Y]):- 1 is A mod 2, parity_partition(B,X,Y).
 list_evens_odds([], [], []).
 list_evens_odds([E|Zs], [E|Es], Os) :- 0 #= E mod 2, list_evens_odds(Zs, Es, Os).
 list_evens_odds([E|Zs], Es, [E|Os]) :- 1 #= E mod 2, list_evens_odds(Zs, Es, Os).
+
+% совместное использование
+remove_next_elem(A, Elem, X) :- list_next(Elem, A, Next_Elem), list_remove(Next_Elem, A, X).
