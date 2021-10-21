@@ -41,6 +41,11 @@ list_next(Elem , List, NextElem):- % 1 способ
 
 list_next_s(Elem, List, NextElem):- % 2 способ
    append(_, [Elem,NextElem|_], List).
+   
+                               % 3 способ
+list_next_el([A,B|_], A, B).
+list_next_el([_|T], A, B):- list_next_el(T, A, B).
+
 
 
 %разделение списка на два по принципу четности элементов
